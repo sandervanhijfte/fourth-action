@@ -1,0 +1,21 @@
+name: Test and Deploy
+on: push
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: ci
+      - name: Run test lint
+        run: lint
+      - name: Run test
+        run: test
+      - name: Run build
+        run: build
+
