@@ -18,4 +18,6 @@ jobs:
         run: npm run test
       - name: Run build
         run: npm run build
+      - name: Inform that it is done
+        run: echo "it is done"
 
